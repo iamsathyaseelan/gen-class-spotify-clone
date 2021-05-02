@@ -7,7 +7,6 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import {useHistory} from "react-router-dom";
-import Cookies from "js-cookie";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -39,8 +38,8 @@ export default function Nav() {
                         history.push('/')
                     }} color="inherit">Home</Button>
                     <Button onClick={()=>{
-                        Cookies.remove('spotifyAuthToken')
-                        history.push('/')
+                        window.localStorage.removeItem('spotifyAuthToken')
+                        window.location = '/'
                     }} color="inherit">Logout</Button>
                 </Toolbar>
             </AppBar>

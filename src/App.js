@@ -5,14 +5,13 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import Cookies from 'js-cookie'
 import Login from './pages/login'
 import 'react-spotify-auth/dist/index.css'
 import Dashboard from "./pages/dashboard";
 import Playlist from "./pages/playlist";
 
 const App = () => {
-    const token = Cookies.get('spotifyAuthToken')
+    const token = window.localStorage.getItem('spotifyAuthToken')
     console.log(token)
     if (!token) {
         return <Login/>

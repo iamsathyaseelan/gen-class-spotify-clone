@@ -55,12 +55,14 @@ export default function Login() {
                         Sign in
                     </Typography>
                     <SpotifyAuth
-                        redirectUri={`${process.env.REACT_APP_APP_URL}/callback`}
+                        redirectUri={`${process.env.REACT_APP_APP_URL}`}
                         clientID={process.env.REACT_APP_CLIENT_ID}
                         scopes={[Scopes.userReadPrivate, 'user-read-email']} // either style will work
                         btnClassName={classes.submit}
                         title="Login with shopify"
                         noLogo={true}
+                        noCookie={true}
+                        localStorage={true}
                     />
                 </div>
             </Grid>
